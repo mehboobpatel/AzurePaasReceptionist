@@ -26,8 +26,8 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build . -t gitactvoice.azurecr.io/recep:${{ github.sha }}
-          docker push  gitactvoice.azurecr.io/recep:${{ github.sha }}
+          docker build . -t mehboob.azurecr.io/gitactrecep:${{ github.sha }}
+          docker push  mehboob.azurecr.io/gitactrecep:${{ github.sha }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -51,6 +51,6 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'testingvoice'
-          images : gitactvoice.azurecr.io/recep:${{ github.sha }}
+          images : mehboob.azurecr.io/gitactrecep:${{ github.sha }}
           slot-name: 'Production'
           
