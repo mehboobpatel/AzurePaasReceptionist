@@ -19,11 +19,11 @@ credential = DefaultAzureCredential()
 
 VAULT_URL = os.getenv("KEY_VAULT")
 
-# client = SecretClient(vault_url=VAULT_URL, credential=credential)
+client = SecretClient(vault_url=VAULT_URL, credential=credential)
 
-# Retrieve secrets from Key Vault
-# username = client.get_secret('DBUSERNAME').value
-# password = client.get_secret('DBPASSWORD').value
+#Retrieve secrets from Key Vault
+username = client.get_secret('DBUSERNAME').value
+password = client.get_secret('DBPASSWORD').value
 
 # Connect to Azure SQL DB
 server = 'reception.database.windows.net'
