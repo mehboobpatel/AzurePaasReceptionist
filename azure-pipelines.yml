@@ -15,6 +15,7 @@ variables:
   containerRegistry: 'mehboob.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+  KEY_VAULT: 'https://voicedbcred.vault.azure.net'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
