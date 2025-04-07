@@ -3,7 +3,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- master
+- azure-pipelines
 
 resources:
 - repo: self
@@ -43,6 +43,4 @@ stages:
         azureSubscription: 'Azure for Students(8c467071-620f-4d5d-9c84-38c9f928d546)'
         appName: 'receptionist'
         containers: 'mehboob.azurecr.io/azdevopsrecep:$(tag)'
-        containerCommand: 'python app.py''      
-
-          
+        containerCommand: 'python app.py'
