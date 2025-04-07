@@ -39,9 +39,15 @@ stages:
         tags: |
           $(tag)
 
-    - task: AzureWebAppContainer@1
+
+
+    - task: AzureRmWebAppDeployment@5
       inputs:
-        azureSubscription: 'Azure for Students(8c467071-620f-4d5d-9c84-38c9f928d546)'
-        appName: 'receptionist'
-        containers: 'mehboob.azurecr.io/azdevopsrecep:$(tag)'
-        containerCommand: 'python app.py'
+            ConnectionType: 'AzureRM'
+            azureSubscription: 'Azure for Students(8c467071-620f-4d5d-9c84-38c9f928d546)'
+            appType: 'webAppContainer'
+            WebAppName: 'receptionist'
+            DockerNamespace: 'mehboob.azurecr.io'
+            DockerRepository: 'azdevopsrecep'
+            DockerImageTag: '$(tag)'
+            StartupCommand: 'python app.py'
